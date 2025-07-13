@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import FormPage from "../pages/Form";
@@ -10,11 +10,11 @@ export default function AppRoutes() {
       <Route path="/" element={<Login />} />
       <Route path="/dashboard" 
       element={
-              <PrivateRoute>
+          <PrivateRoute>
                   <Dashboard />
             </PrivateRoute>
           }
-      />
+          />
       <Route path="/form" element={<FormPage />} />
     </Routes>
   );
