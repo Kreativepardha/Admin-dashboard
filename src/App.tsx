@@ -1,11 +1,17 @@
 import './App.css'
+import { ErrorBoundary } from './components/ErrorBoundary'
+import AppRoutes from './routes/AppRoutes'
+import { Toaster } from 'sonner';
 
 function App() {
 
   return (
- <div className="bg-yellow-300 h-screen font-bold">
-sshihaaaaaata
- </div>
+    <>
+    <ErrorBoundary>
+      <AppRoutes />
+    </ErrorBoundary>
+       <Toaster richColors position="top-center" />
+    </>
   )
 }
 
