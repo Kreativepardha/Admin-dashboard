@@ -1,5 +1,5 @@
 "use client";
-import React, { SVGProps, useState } from "react";
+import React, { useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { cn } from "../../lib/utils";
 
@@ -61,7 +61,7 @@ export const StickyBanner = ({
   );
 };
 
-const CloseIcon = (props: SVGProps<SVGSVGElement>) => {
+const CloseIcon = (props: any) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

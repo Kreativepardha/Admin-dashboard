@@ -5,7 +5,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { toast } from "sonner";
-import { IconBrandGoogle, IconBrandGithub } from "@tabler/icons-react";
+import { IconBrandGoogle } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
 
 export function AuthButtons() {

@@ -1,9 +1,5 @@
 import {
   IconHome,
-  IconTerminal2,
-  IconNewSection,
-  IconExchange,
-  IconBrandX,
   IconBrandGithub,
   IconBrandLinkedin,
 } from "@tabler/icons-react";

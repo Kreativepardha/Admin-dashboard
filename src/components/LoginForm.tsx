@@ -10,14 +10,14 @@ export function LoginForm() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("demo@demo.com");
   const [password, setPassword] = useState("passwordaaaa");
-  const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
+  const [errors, setErrors] = useState<{ email?: string[]; password?: string[] }>({});
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const result = loginSchema.safeParse({ email, password });
 
     if (!result.success) {
-      setErrors(result.error.flatten().fieldErrors);
+      setErrors(result.error.flatten().fieldErrors) ;
       return;
     }
 

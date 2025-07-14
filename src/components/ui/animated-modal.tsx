@@ -2,12 +2,12 @@
 import { cn } from "../../lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import React, {
-  ReactNode,
   createContext,
   useContext,
   useEffect,
   useRef,
   useState,
+  type ReactNode,
 } from "react";
 
 interface ModalContextType {
@@ -77,8 +77,9 @@ export const ModalBody = ({
     }
   }, [open]);
 
-  const modalRef = useRef(null);
+  const modalRef = useRef<HTMLDivElement | any>(null);
   const { setOpen } = useModal();
+
   useOutsideClick(modalRef, () => setOpen(false));
 
   return (
