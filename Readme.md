@@ -12,17 +12,10 @@ A full-featured Admin Dashboard application built using **React**, **Firebase Au
 
 ## 🔗 Live Demo
 
-👉 [Click here to view the deployed app](https://your-vercel-link.vercel.app)
+👉 [Click here to view the deployed app](https://admin-dashboard-theta-sepia-36.vercel.app/)
 
 ---
 
-## 📸 Screenshots
-
-| Login Page | Dashboard | Add/Edit Modal |
-|------------|-----------|----------------|
-| ![login](./screenshots/login.png) | ![dashboard](./screenshots/dashboard.png) | ![form](./screenshots/form.png) |
-
----
 
 ## 🛠️ Features
 
