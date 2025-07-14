@@ -10,7 +10,8 @@ import {
   IconBrandGoogle
 } from "@tabler/icons-react";
 import { cn } from '../lib/utils';
-import { Boxes } from "../components/ui/background-boxes"; 
+import WorldMap from '@/components/ui/world-map';
+import { demoDots } from '@/constants/worldMapdots';
 
 export default function Login() {
   const navigate = useNavigate()
@@ -18,30 +19,42 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
 
-    const handleLogin = async (e: React.FormEvent) => {
-      e.preventDefault()
-      
-        const result = loginSchema.safeParse({ email,  password})
-        if(!result.success) {
-                const fieldErrors = result.error.flatten().fieldErrors;
-                setErrors(fieldErrors)
-                return;
-        }
-        try {
-            await loginUser(email, password)
-            navigate('/dashboard')
-            toast.success('Login Successfull')
-        } catch (err) {
-            toast.error('Invalid Credentials!!!')
-        }
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const result = loginSchema.safeParse({ email, password });
+    if (!result.success) {
+      const fieldErrors = result.error.flatten().fieldErrors;
+      setErrors(fieldErrors);
+      return;
     }
 
+    try {
+      await loginUser(email, password);
+      toast.success('Login Successful');
+      navigate('/dashboard');
+    } catch (err) {
+      toast.error('Invalid Credentials!!!');
+    }
+  };
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    if (id === 'email') {
+      setEmail(value);
+    } else if (id === 'password') {
+      setPassword(value);
+    }
+  };
 
-   return (
-    <div className="bg-yellow-300 p-2 flex items-center justify-center bg-white dark:bg-black relative">
-      <Boxes />
-      <div className="shadow-input mx-auto w-full max-w-md rounded-2xl bg-white dark:bg-zinc-900 p-6 md:p-8">
+  return (
+    <div className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-black">
+      
+      <div className="absolute inset-0 z-0">
+        <WorldMap dots={demoDots}/>
+      </div>
+
+      <div className="relative z-10 w-full max-w-md p-4 md:p-8 bg-white/80 dark:bg-zinc-900/80 rounded-2xl shadow-xl backdrop-blur">
         <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">
           Welcome back
         </h2>
@@ -78,7 +91,6 @@ export default function Login() {
           <OAuthButton icon={<IconBrandGoogle />} label="Continue with Google" />
         </div>
       </div>
-
     </div>
   );
 }
@@ -86,7 +98,6 @@ export default function Login() {
 const LabelInputContainer = ({ children, className }: { children: React.ReactNode; className?: string }) => (
   <div className={cn("flex w-full flex-col space-y-2", className)}>{children}</div>
 );
-
 
 const BottomGradient = () => (
   <>

@@ -10,9 +10,7 @@ export default function AppRoutes() {
       <Route path="/" element={<Login />} />
       <Route path="/dashboard" 
       element={
-          <PrivateRoute>
                   <Dashboard />
-            </PrivateRoute>
           }
           />
       <Route path="/form" element={<FormPage />} />
