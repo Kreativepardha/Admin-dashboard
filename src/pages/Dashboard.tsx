@@ -80,13 +80,13 @@ export default function Dashboard() {
           <span className="dark:text-white p-2">By Kreative_Pardha</span>
         </PointerHighlight>
       </div>
-<div className="bg-white p-2 rounded-md relative z-10">
-      <h1 className="text-xl font-bold mb-4">Users</h1>
+<div className="bg-white/80 p-2 rounded-md relative z-10 ">
+      <h1 className="text-xl font-extrabold mb-4">CRUD ADMIN Dashboard</h1>
       <Button className="mb-4" onClick={openAddModal}>Add User</Button>
 
-      <table className="w-full p-2 border border-gray-200 text-left text-sm">
+      <table className="w-full p-2  border-gray-200 text-left text-sm bg-slate-100/90 p-2 rounded-xl">
         <thead>
-          <tr className="bg-gray-100 dark:bg-zinc-800">
+          <tr className="bg-zinc-900 text-white dark:bg-zinc-800  ">
             <th className="p-2">Name</th>
             <th className="p-2">Email</th>
             <th className="p-2">Actions</th>
@@ -98,8 +98,10 @@ export default function Dashboard() {
               <td className="p-2">{user.name}</td>
               <td className="p-2">{user.email}</td>
               <td className="p-2 space-x-2">
-                <button onClick={() => openEditModal(user)} className="text-blue-500 hover:underline">Edit</button>
-                <button onClick={() => handleDelete(user.id)} className="text-red-500 hover:underline">Delete</button>
+                <div className="flex items-between gap-2">
+                <button onClick={() => openEditModal(user)} className="text-black font-bold hover:underline bg-yellow-200 p-2 rounded-md" >Edit</button>
+                <button onClick={() => handleDelete(user.id)} className="text-red-500 hover:underline bg-red-300/40 p-2 rounded-md">Delete</button>
+                </div>
               </td>
             </tr>
           ))}
