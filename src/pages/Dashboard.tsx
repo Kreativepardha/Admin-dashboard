@@ -68,7 +68,7 @@ export default function Dashboard() {
   <Boxes />
 </div>
       <div className="sticky top-0 z-50">
-        <StickyBanner className="bg-gradient-to-b from-teal-200 to-teal-100 shadow-md text-black">
+        <StickyBanner className="bg-gradient-to-b from-neutral-00 to-zinc-500 shadow-md text-white">
           <p className="mx-0 max-w-[90%]  drop-shadow-md">
             I'm a Full Stack Developer — building CyberSecurity Applications with integrated AI.
           </p>
